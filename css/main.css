@@ -22,6 +22,9 @@
 #icon-explanation span {
 	font-size: xx-large;
 }
+#icon-explanation > .col-md-4 {
+	
+}
 
 .numbers > * {
 	display: inline;
@@ -91,6 +94,12 @@
 }
 
 @media screen and (max-width: 767px){
+	.parallax {
+		height: 670px;
+	}
+	#second-col {
+		margin-top: 0px;
+	}
 	.thumbnail {
 		height: auto;
 		min-height: 0 !important;

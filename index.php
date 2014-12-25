@@ -110,6 +110,7 @@
 		</div>
 
 		<div id="projects-title">
+			<hr>
 			<div class="container">
 				<h1>Projects I worked on</h1>
 			</div>
@@ -140,7 +141,7 @@
 					</div>
 				</div>
 			</div>
-			<div style="height: 10px;"></div>
+			<hr>
 		</div>
 
 		<div id="projects-main">
