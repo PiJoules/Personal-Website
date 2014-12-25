@@ -20,6 +20,8 @@
 
 .logo {
 	border-radius: 1000px !important;
+	width: 100px !important;
+	height: auto !important;
 }
 
 .logo > img {
@@ -32,10 +34,6 @@
 	height: 570px;
 }
 
-#top {
-	height: 500px;
-}
-
 #projects-title {
 	background-color: white;
 }
@@ -45,24 +43,9 @@
 	padding-top: 20px;
 }
 
-.one-by-one {
-	height: 300px;
-}
-
 .thumbnail {
 	height: 300px;
 	max-height: 300px;
-}
-
-#photo {
-	width: 100%;
-	border-radius: 1000px;
-	margin-top: 10%;
-}
-
-.logo {
-	width: 100px !important;
-	height: auto !important;
 }
 
 .parallax .btn {
@@ -73,6 +56,14 @@
 	background-image: url('/images/sentry.jpg');
 }
 
+/* Add 20px of line space and move the actions down 20px */
+.card-info {
+	min-height: 140px;
+}
+.card .actions {
+	bottom: -100px;
+}
+
 @media screen and (min-width: 768px){
 	.overlayer {
 		height: 700px;
@@ -80,9 +71,6 @@
 }
 
 @media screen and (max-width: 767px){
-	#top {
-		height: 290px;
-	}
 	.thumbnail {
 		height: auto;
 		min-height: 0 !important;

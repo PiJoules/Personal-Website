@@ -13,29 +13,8 @@
 		<link rel="stylesheet" type="text/css" href="genericons/genericons.css"/>
 		<link rel="stylesheet" type="text/css" href="css/main.css"/>
 
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
 	</head>
 	<body>
-
-		<!--<img id="fixed-img" src="images/matrix.gif"/>-->
-
-		<!--<div id="top" class="container">
-			<div class="row">
-				<div class="col-xs-3 col-md-2">
-					<img id="photo" src="images/somephoto.jpg"/>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4 col-md-offset-4">
-					<h1 style='color: white;'>Greetings Traveler</h1>
-				</div>
-			</div>
-		</div>-->
 
 		<nav class="navbar filter-bar fixed-absolute" role="navigation" style="background-color: rgba(0,0,0,0.4);">
 			<div class="container">
@@ -74,6 +53,12 @@
 							<a href="#projects-title">
 								<span class="glyphicon glyphicon-tasks"></span>
 								<p>Projects</p>
+							</a>
+						</li>
+						<li>
+							<a href="#sentry">
+								<span class="glyphicon glyphicon-wrench"></span>
+								<p>Sentry</p>
 							</a>
 						</li>
 					</ul>
@@ -133,7 +118,7 @@
 								<div class="moving">
 									<a href="http://kompactit.com/">
 										<h3>Kompact</h3>
-										<p>Create and read summarized news articles with Kompact. The Kompact API can be used on any web service for summaries of any specified text.</p>
+										<p>Create and read summarized news articles with Kompact. The API can be used on any web service to generate summaries of text.</p>
 									</a>
 									<b class="actions">
 										<a class="blue-text" href="http://kompactit.com/" target="_blank">Visit</a>
@@ -236,7 +221,7 @@
 			</div>
 		</div>
 
-		<div class="footer">
+		<div id="sentry" class="footer">
 			<div class="overlayer">
 				<div class="container">
 					<div class="row">
