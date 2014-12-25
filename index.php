@@ -11,6 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="css/creative-tim.css"/>
 		<link rel="stylesheet" type="text/css" href="octicons/octicons.css"/>
 		<link rel="stylesheet" type="text/css" href="genericons/genericons.css"/>
+		<link rel="stylesheet" type="text/css" href="font-awesome-4.2.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="css/main.css"/>
 
 	</head>
@@ -79,7 +80,7 @@
 		                </h1>
 		            </div>
 		            <div class="col-md-6">
-		            	<div class="row">
+		            	<div id="second-col" class="row">
 			                <div class="actions pull-right">
 			                     <a class="btn btn-lg btn-fill btn-success" href="https://github.com/PiJoules">
 			                     	<span class="octicon octicon-octoface" aria-hidden="true"></span> Github
@@ -88,9 +89,17 @@
 		            	</div>
 		            	<div class="row">
 			                <div class="actions pull-right">
-			                     <a class="btn btn-lg btn-fill btn-primary" href="https://www.linkedin.com/pub/leonard-chan/64/a84/71b">
-			                     	<span class="genericon genericon-github"></span>
+			                     <a class="btn btn-lg btn-fill btn-info" href="https://www.linkedin.com/pub/leonard-chan/64/a84/71b">
+			                     	<span class="genericon genericon-linkedin-alt"></span>
 			                     	Linkedin
+			                     </a>
+			                </div>
+		            	</div>
+		            	<div class="row">
+			                <div class="actions pull-right">
+			                     <a class="btn btn-lg btn-fill btn-primary" href="https://bitbucket.org/Pi_Joules">
+			                     	<span class="fa fa-bitbucket"></span>
+			                     	Bitbucket
 			                     </a>
 			                </div>
 		            	</div>
