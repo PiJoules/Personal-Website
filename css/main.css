@@ -1,4 +1,4 @@
-@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=e89ba52a-fa21-49f7-a279-aff446e89183");
+@import url("/fonts/fastfonts.css");
 @font-face {
 	font-family: "DIN Next W01 Light";
 	src: url("/fonts/3e0b2cd7-9657-438b-b4af-e04122e8f1f7.eot?#iefix");
@@ -69,8 +69,14 @@
 	width: 250px;
 }
 
-@media screen and (min-width: 768px){
+.footer {
+	background-image: url('/images/sentry.jpg');
+}
 
+@media screen and (min-width: 768px){
+	.overlayer {
+		height: 700px;
+	}
 }
 
 @media screen and (max-width: 767px){
@@ -83,9 +89,6 @@
 	}
 	.thumbnail > img {
 		width: 100% !important;
-	}
-	.parallax {
-
 	}
 }
 

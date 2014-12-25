@@ -202,7 +202,7 @@
 										<p>This website was constructed using Bootstrap and is hosted on Google App Engine.</p>
 									</a>
 									<b class="actions">
-										<a class="blue-text" href="/" target="_blank">View Source Code</a>
+										<a class="blue-text" href="https://github.com/PiJoules/Personal-Website" target="_blank">View Source Code</a>
 									</b>
 								</div>
 							</div>
@@ -230,6 +230,18 @@
 									</b>
 								</div>
 							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer">
+			<div class="overlayer">
+				<div class="container">
+					<div class="row">
+						<div class="credits">
+							Made with <span class="glyphicon glyphicon-heart" alt="heart"></span>
 						</div>
 					</div>
 				</div>
