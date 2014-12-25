@@ -13,6 +13,9 @@ handlers:
 - url: /genericons
   static_dir: genericons
 
+- url: /font-awesome-4.2.0
+  static_dir: font-awesome-4.2.0
+
 - url: /js
   static_dir: js
 
