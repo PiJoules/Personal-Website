@@ -1,0 +1,137 @@
+@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=e89ba52a-fa21-49f7-a279-aff446e89183");
+@font-face {
+	font-family: "DIN Next W01 Light";
+	src: url("/fonts/3e0b2cd7-9657-438b-b4af-e04122e8f1f7.eot?#iefix");
+	src: url("/fonts/3e0b2cd7-9657-438b-b4af-e04122e8f1f7.eot?#iefix") format("eot"), url("/fonts/bc176270-17fa-4c78-a343-9fe52824e501.woff") format("woff"), url("/fonts/3516f91d-ac48-42cd-acfe-1be691152cc4.ttf") format("truetype"), url("/fonts/d1b1e866-a411-42ba-8f75-72bf28e23694.svg#d1b1e866-a411-42ba-8f75-72bf28e23694.svg") format("svg");
+}
+@font-face {
+	font-family: "DIN Next W01 Regular";
+	src: url("/fonts/da088ecc-a53c-4831-a95b-6fd81b5b338a.eot?#iefix");
+	src: url("/fonts/da088ecc-a53c-4831-a95b-6fd81b5b338a.eot?#iefix") format("eot"), url("/fonts/c5a7f89e-15b6-49a9-8259-5ea665e72191.woff") format("woff"), url("/fonts/868c94b5-ca49-46b7-b62b-297f8d861125.ttf") format("truetype"), url("/fonts/e3145f65-29b5-4f7f-8c6e-2dc135021b6a.svg#e3145f65-29b5-4f7f-8c6e-2dc135021b6a.svg") format("svg");
+}
+
+.icon-bar {
+	background-color: white;
+}
+
+.parallax {
+	background-image: url('/images/soldier.jpg');
+}
+
+.logo {
+	border-radius: 1000px !important;
+}
+
+.logo > img {
+	width: 100% !important;
+	height: auto !important;
+}
+
+.parallax {
+	padding-top: 200px;
+	height: 570px;
+}
+
+#top {
+	height: 500px;
+}
+
+#projects-title {
+	background-color: white;
+}
+
+#projects-main {
+	background-color: lightgray;
+	padding-top: 20px;
+}
+
+.one-by-one {
+	height: 300px;
+}
+
+.thumbnail {
+	height: 300px;
+	max-height: 300px;
+}
+
+#photo {
+	width: 100%;
+	border-radius: 1000px;
+	margin-top: 10%;
+}
+
+.logo {
+	width: 100px !important;
+	height: auto !important;
+}
+
+.parallax .btn {
+	width: 250px;
+}
+
+@media screen and (min-width: 768px){
+
+}
+
+@media screen and (max-width: 767px){
+	#top {
+		height: 290px;
+	}
+	.thumbnail {
+		height: auto;
+		min-height: 0 !important;
+	}
+	.thumbnail > img {
+		width: 100% !important;
+	}
+	.parallax {
+
+	}
+}
+
+
+
+/* Utility Functions */
+
+.width-100 {
+	width: 100%;
+}
+
+.height-100 {
+	height: 100%;
+}
+
+.height-300px {
+	height: 300px;
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}
+
+.margin-top-m50px {
+	margin-top: -50px;
+}
+
+.margin-top-0 {
+	margin-top: 0;
+}
+
+.margin-left-right-0 {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.padding-left-right-0 {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.text-align-center {
+	text-align: center;
+}
+
+.background-color-lightgray {
+	background-color: lightgray;
+}
+

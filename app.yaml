@@ -1,0 +1,26 @@
+application: festive-rarity-803
+version: 1
+runtime: php
+api_version: 1
+
+handlers:
+- url: /css
+  static_dir: css
+
+- url: /octicons
+  static_dir: octicons
+
+- url: /genericons
+  static_dir: genericons
+
+- url: /js
+  static_dir: js
+
+- url: /images
+  static_dir: images
+
+- url: /fonts
+  static_dir: fonts
+
+- url: /.*
+  script: index.php
