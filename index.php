@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Leo's Page</title>
+		<title>Greetings Traveler</title>
 
 		<!-- Bootstrap -->
 		<link href="css/bootstrap.min.css" rel="stylesheet"/>
@@ -12,6 +12,7 @@
 		<link rel="stylesheet" type="text/css" href="octicons/octicons.css"/>
 		<link rel="stylesheet" type="text/css" href="genericons/genericons.css"/>
 		<link rel="stylesheet" type="text/css" href="font-awesome-4.2.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="font-mfizz-1.2/font-mfizz.css"/>
 		<link rel="stylesheet" type="text/css" href="css/main.css"/>
 
 	</head>
@@ -112,6 +113,34 @@
 			<div class="container">
 				<h1>Projects I worked on</h1>
 			</div>
+			<div class="container">
+				<div id="icon-explanation" class="row">
+					<div class="col-md-4">
+						<div class="page-header">
+							<h1><small>Platforms</small></h1>
+						</div>
+						<span class="glyphicon glyphicon-globe"></span>Web&nbsp;
+						<span class="fa fa-android"></span>Android&nbsp;
+						<span class="fa fa-apple"></span>iOS&nbsp;
+					</div>
+					<div class="col-md-4">
+						<div class="page-header"><h1><small>Databases + Frameworks</small></h1></div>
+						<span class="icon-mysql-alt"></span>Mysql&nbsp;
+						<span class="icon-google-developers"></span>Google App Engine&nbsp;
+					</div>
+					<div class="col-md-4">
+						<div class="page-header"><h1><small>Languages</small></h1></div>
+						<span class="icon-java"></span>Java&nbsp;
+						<span class="icon-python"></span>Python&nbsp;
+						<span class="icon-php"></span>PHP&nbsp;
+						<span class="icon-html"></span>HTML&nbsp;
+						<span class="icon-css"></span>CSS&nbsp;
+						<span class="icon-javascript"></span>Javascript+jQuery&nbsp;
+						<span class="icon-objc"></span>Objective-C&nbsp;
+					</div>
+				</div>
+			</div>
+			<div style="height: 10px;"></div>
 		</div>
 
 		<div id="projects-main">
@@ -120,8 +149,30 @@
 					<div class="col-md-8">
 
 						<div class="card">
-							<div class="thumbnail two-by-one">           
+							<div class="thumbnail">           
 								<img class="" src="images/kompact.png" />
+								<a href="http://kompactit.com/">
+									<div class="thumb-cover"></div>
+								</a>
+								<div class="details">
+									<div class="numbers">
+										<h4 class="glyphicon glyphicon-globe"></h4>
+										<h4 class="fa fa-android"></h4>
+										<h4 class="fa fa-apple"></h4>
+										<h4 class="separator">|</h4>
+										<h4 class="icon-mysql-alt"></h4>
+										<h4 class="icon-google-developers"></h4>
+										<h4 class="separator">|</h4>
+										<h4 class="icon-java"></h4>
+										<h4 class="icon-python"></h4>
+										<h4 class="icon-php"></h4>
+										<h4 class="icon-html"></h4>
+										<h4 class="icon-css"></h4>
+										<h4 class="icon-javascript"></h4>
+										<h4 class="icon-objc"></h4>
+									</div>
+									<div class="clearfix"></div>
+								</div> 
 							</div>
 							<div class="card-info">
 								<div class="moving">
@@ -143,6 +194,17 @@
 						<div class="card">
 							<div class="thumbnail">           
 								<img alt="Opt wizard thumbnail" src="images/gps.png" />
+								<a href="https://itunes.apple.com/us/app/gps-coordinate-extractor/id763199461?mt=8">
+									<div class="thumb-cover"></div>
+								</a>
+								<div class="details">
+									<div class="numbers">
+										<h4 class="fa fa-apple"></h4>
+										<h4 class="separator">|</h4>
+										<h4 class="icon-objc"></h4>
+									</div>
+									<div class="clearfix"></div>
+								</div> 
 							</div>
 							<div class="card-info">
 								<div class="moving">
@@ -151,6 +213,8 @@
 										<p>Get GPS coordinates of any path you make on with your iPhone.</p>
 									</a>
 									<b class="actions">
+										<a class="blue-text" href="https://github.com/PiJoules/GPS_Project" target="_blank">View Source Code</a>
+										<b class="separator">|</b>
 										<a class="blue-text" href="https://itunes.apple.com/us/app/gps-coordinate-extractor/id763199461?mt=8" target="_blank">Check out on App Store</a>
 									</b>
 								</div>
@@ -161,12 +225,24 @@
 
 				</div>
 				<div class="row">
-
 					<div class="col-md-4">
-
 						<div class="card">
 							<div class="thumbnail">           
 								<img alt="Opt wizard thumbnail" src="images/polygon.png" />
+								<a href="https://github.com/PiJoules/TestApp">
+									<div class="thumb-cover"></div>
+								</a>
+								<div class="details">
+									<div class="numbers">
+										<h4 class="fa fa-android"></h4>
+										<h4 class="separator">|</h4>
+										<h4 class="icon-mysql-alt"></h4>
+										<h4 class="separator">|</h4>
+										<h4 class="icon-java"></h4>
+										<h4 class="icon-php"></h4>
+									</div>
+									<div class="clearfix"></div>
+								</div> 
 							</div>
 							<div class="card-info">
 								<div class="moving">
@@ -184,16 +260,31 @@
 					</div>
 
 					<div class="col-md-8">
-
 						<div class="card">
 							<div class="thumbnail">           
 								<img alt="Opt wizard thumbnail" src="images/this-website.png" />
+								<a href="/">
+									<div class="thumb-cover"></div>
+								</a>
+								<div class="details">
+									<div class="numbers">
+										<h4 class="glyphicon glyphicon-globe"></h4>
+										<h4 class="separator">|</h4>
+										<h4 class="icon-google-developers"></h4>
+										<h4 class="separator">|</h4>
+										<h4 class="icon-php"></h4>
+										<h4 class="icon-html"></h4>
+										<h4 class="icon-css"></h4>
+										<h4 class="icon-javascript"></h4>
+									</div>
+									<div class="clearfix"></div>
+								</div> 
 							</div>
 							<div class="card-info">
 								<div class="moving">
 									<a href="/">
 										<h3>This website</h3>
-										<p>This website was constructed using Bootstrap and is hosted on Google App Engine.</p>
+										<p>This website was constructed using Bootstrap and is hosted on Google App Engine. It also looks good on mobile.</p>
 									</a>
 									<b class="actions">
 										<a class="blue-text" href="https://github.com/PiJoules/Personal-Website" target="_blank">View Source Code</a>
@@ -210,6 +301,17 @@
 						<div class="card">
 							<div class="thumbnail">           
 								<img alt="Opt wizard thumbnail" src="images/batman.jpeg" />
+								<a href="https://github.com/PiJoules/Batman-on-drugs">
+									<div class="thumb-cover"></div>
+								</a>
+								<div class="details">
+									<div class="numbers">
+										<h4 class="fa fa-android"></h4>
+										<h4 class="separator">|</h4>
+										<h4 class="icon-java"></h4>
+									</div>
+									<div class="clearfix"></div>
+								</div> 
 							</div>
 							<div class="card-info">
 								<div class="moving">

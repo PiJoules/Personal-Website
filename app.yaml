@@ -16,6 +16,9 @@ handlers:
 - url: /font-awesome-4.2.0
   static_dir: font-awesome-4.2.0
 
+- url: /font-mfizz-1.2
+  static_dir: font-mfizz-1.2
+
 - url: /js
   static_dir: js
 
