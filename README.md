@@ -8,3 +8,4 @@
 3. Convert Chess engine + player to web app, then add to site
 4. Add sub unique pages for each project given
 5. Maybe add stuff like GPA, classes taken, resume stuff, etc.
+6. Check out Angular JS

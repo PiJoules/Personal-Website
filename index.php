@@ -329,6 +329,44 @@
 							</div>
 						</div>
 					</div>
+
+					<div class="col-md-4">
+						<div class="card">
+							<div class="thumbnail">           
+								<img alt="Opt wizard thumbnail" src="images/owl.png" />
+								<a href="http://clever-spirit-808.appspot.com/">
+									<div class="thumb-cover"></div>
+								</a>
+								<div class="details">
+									<div class="numbers">
+										<h4 class="glyphicon glyphicon-globe"></h4>
+										<h4 class="separator">|</h4>
+										<h4 class="icon-google-developers"></h4>
+										<h4 class="separator">|</h4>
+										<h4 class="icon-php"></h4>
+										<h4 class="icon-html"></h4>
+										<h4 class="icon-css"></h4>
+										<h4 class="icon-javascript"></h4>
+									</div>
+									<div class="clearfix"></div>
+								</div> 
+							</div>
+							<div class="card-info">
+								<div class="moving">
+									<a href="http://clever-spirit-808.appspot.com/">
+										<h3>Reddit Gif Carousel</h3>
+										<p>A carousel viewer for cycling through reddit.com/r/gifs.</p>
+									</a>
+									<b class="actions">
+										<a class="blue-text" href='http://clever-spirit-808.appspot.com/' target="_blank">Visit</a>
+										<b class="separator">|</b>
+										<a class="blue-text" href="https://github.com/PiJoules/Reddit-Gif-Carousel" target="_blank">View Source Code</a>
+									</b>
+								</div>
+							</div>
+						</div>
+					</div>
+
 				</div>
 			</div>
 		</div>
