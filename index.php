@@ -367,6 +367,42 @@
 						</div>
 					</div>
 
+					<div class="col-md-4">
+						<div class="card">
+							<div class="thumbnail">           
+								<img alt="Opt wizard thumbnail" src="images/youtubeplayer.png" />
+								<a href="http://solar-dialect-810.appspot.com/">
+									<div class="thumb-cover"></div>
+								</a>
+								<div class="details">
+									<div class="numbers">
+										<h4 class="glyphicon glyphicon-globe"></h4>
+										<h4 class="separator">|</h4>
+										<h4 class="icon-google-developers"></h4>
+										<h4 class="separator">|</h4>
+										<h4 class="icon-html"></h4>
+										<h4 class="icon-css"></h4>
+										<h4 class="icon-javascript"></h4>
+									</div>
+									<div class="clearfix"></div>
+								</div> 
+							</div>
+							<div class="card-info">
+								<div class="moving">
+									<a href="http://solar-dialect-810.appspot.com/">
+										<h3>Random YouTube Video Player</h3>
+										<p>A simple webapp that plays youtube videos selected randomly from a query to YouTube.</p>
+									</a>
+									<b class="actions">
+										<a class="blue-text" href='http://solar-dialect-810.appspot.com/' target="_blank">Visit</a>
+										<b class="separator">|</b>
+										<a class="blue-text" href="https://github.com/PiJoules/random-youtube-viewer" target="_blank">View Source Code</a>
+									</b>
+								</div>
+							</div>
+						</div>
+					</div>
+
 				</div>
 			</div>
 		</div>
