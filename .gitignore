@@ -1,6 +1,7 @@
 *.pyc
 lib/*
 private/*
+build/
 
 !lib/README.md
 !private/README.md
