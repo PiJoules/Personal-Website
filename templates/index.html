@@ -1,24 +1,17 @@
 {% extends "base.html" %}
 
 {% block content_title %}
-    {% if search %}
-        Search "{{ search }}"
-    {% else %}
-        Blog entries
-    {% endif %}
+    Stuff I worked on
 {% endblock %}
 
 {% block content %}
-    {% for entry in object_list %}
-        {% if search %}
-            {% set entry = entry.entry %}
-        {% endif %}
+    {% for post in posts %}
         <h3>
-            <a href="{% if entry.published %}{{ url_for('detail', slug=entry.slug) }}{% else %}{{ url_for('edit', slug=entry.slug) }}{% endif %}">
-            {{ entry.title }}
+            <a href="/posts/{{ loop.index0 }}">
+            {{ post.title }}
             </a>
         </h3>
-        <p>Created {{ entry.timestamp.strftime('%m/%d/%Y at %G:%I%p') }}</p>
+        <p>Created {{ post.date.year }}/{{ post.date.month }}/{{ post.date.day }}</p>
     {% endfor %}
     {% include "includes/pagination.html" %}
 {% endblock %}
