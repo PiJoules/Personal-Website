@@ -213,7 +213,10 @@ def create():
 @login_required
 def drafts():
     query = Entry.drafts().order_by(Entry.timestamp.desc())
-    return object_list('index.html', query)
+    #print query
+    umm = object_list('index.html', query)
+    #print umm
+    return umm
 
 @app.route('/<slug>/')
 def detail(slug):
