@@ -1,0 +1,7 @@
+html {
+	background: url(/static/assets/log-spiral.svg) no-repeat center center fixed;
+}
+
+body {
+	background-color: transparent;
+}
