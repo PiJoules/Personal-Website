@@ -2,6 +2,7 @@
 lib/*
 private/*
 build/
+blog.db
 
 !lib/README.md
 !private/README.md
