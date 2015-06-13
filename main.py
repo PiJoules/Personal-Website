@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 
 from flask import Flask, render_template, abort, request
 app = Flask(__name__)
@@ -29,7 +30,7 @@ def index():
 	query = request.args.get("q")
 	if query:
 		posts_to_display = search_posts(query)
-	return render_template("index.html", page_count=1, page_num=0, posts=posts_to_display)
+	return render_template("index.html", page_count=1, page_num=0, posts=posts_to_display, search=query)
 
 @app.route("/post/<num>/")
 def post(num):

@@ -1,17 +1,41 @@
 {% extends "base.html" %}
 
 {% block content_title %}
-    Stuff I worked on
+    {% if search %}
+        Search results for "{{ search }}"
+    {% else %}
+        Stuff I worked on
+    {% endif %}
 {% endblock %}
 
 {% block content %}
     {% for post in posts %}
-        <h3>
-            <a href="/post/{{ loop.index0 }}">
+    <div class="row">
+        <div class="col-lg-8">
+<div class="media">
+    <div class="media-body">
+        <h2>
+            <a href="/post/{{ loop.revindex0 }}">
             {{ post.title }}
             </a>
-        </h3>
-        <p>Created {{ post.date.year }}/{{ post.date.month }}/{{ post.date.day }}</p>
+        </h2>
+        <h6>Posted on {{ post.date.month }}/{{ post.date.day }}/{{ post.date.year }}</h6>
+        <p>{{ post.caption }}</p>
+        <p><a href="/post/{{ loop.revindex0 }}">Read more</a></p>
+    </div>
+    {% if post.img %}
+        <div class="media-right media-middle">
+            <a href="/post/{{ loop.revindex0 }}">
+                <img class="media-object" src="{{ post.img }}" alt="...">
+            </a>
+        </div>
+    {% endif %}
+</div>
+        </div>
+    </div>
+        {% if not loop.last %}
+            <hr>
+        {% endif %}
     {% endfor %}
     {% include "includes/pagination.html" %}
 {% endblock %}
