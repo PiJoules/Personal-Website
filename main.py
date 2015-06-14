@@ -24,7 +24,6 @@ def search_posts(query):
 
 @app.route("/")
 @app.route("/post/")
-@app.route("/about/")
 def index():
 	posts_to_display = posts
 	query = request.args.get("q")
@@ -32,16 +31,20 @@ def index():
 		posts_to_display = search_posts(query)
 	return render_template("index.html", page_count=1, page_num=0, posts=posts_to_display, search=query)
 
+@app.route("/about/")
+def about():
+	return render_template("about.html", page_count=1, page_num=0)
+
+@app.route("/contact/")
+def contact():
+	return render_template("contact.html", page_count=1, page_num=0)
+
 @app.route("/post/<num>/")
 def post(num):
 	if int(num) < len(posts):
 		return render_template("posts/" + num + ".html")
 	else:
 		abort(404)
-
-@app.route("/contact/")
-def contact():
-	return render_template("index.html", page_count=1, page_num=0, posts=posts)
 
 @app.errorhandler(404)
 def page_not_found(e):

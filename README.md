@@ -20,6 +20,6 @@ Not doing this will redirect you to the abort page every time you want to displa
 
 
 ## Dependencies
-https://bootswatch.com/ - United bootstrap theme
-https://github.com/coleifer/peewee - ORM (Object-Relation Mapping); also provides blog example this was built off of
-http://scipython.com/blog/ - Design inspiration
+- https://bootswatch.com/ - United bootstrap theme
+- https://github.com/coleifer/peewee - ORM (Object-Relation Mapping); also provides blog example this was built off of
+- http://scipython.com/blog/ - Design inspiration
