@@ -1,4 +1,5 @@
 import json
+import urllib2
 from datetime import datetime
 
 from flask import Flask, render_template, abort, request
@@ -15,17 +16,26 @@ with open('posts.json') as data_file:
 def search_posts(query):
 	matches = []
 	for post in posts:
-		content = render_template("posts/" + post["file"])
-		count = content.count(query)
-		if count > 0:
-			matches.append( (post, count) )
+		if "file" in post:
+			content = render_template("posts/" + post["file"])
+			count = content.count(query)
+			if count > 0:
+				matches.append( (post, count) )
+		elif "links" in post:
+			try:
+				content = urllib2.urlopen(post["links"][0][0]).read().decode("utf8")
+				count = content.count(query)
+				if count > 0:
+					matches.append( (post, count) )
+			except urllib2.URLError, e:
+				pass
 	sorted(matches, key=lambda match: match[1], reverse=True)
 	return [m[0] for m in matches]
 
 def get_adj_posts(post_file):
 	adj_posts = {}
 	for i in range(len(posts)):
-		if posts[i]["file"] == post_file:
+		if "file" in posts[i] and posts[i]["file"] == post_file:
 			if i > 0:
 				adj_posts["prev"] = posts[i-1]
 			if i < len(posts)-1:
@@ -34,7 +44,6 @@ def get_adj_posts(post_file):
 	return adj_posts
 
 @app.route("/")
-@app.route("/post/")
 def index():
 	posts_to_display = posts
 	query = request.args.get("q")
