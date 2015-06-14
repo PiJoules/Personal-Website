@@ -2,6 +2,7 @@
 	{
 		"title": "Second Post",
 		"caption": "Ayy this is the second lmao",
+		"file": "second-post.html",
 		"date": {
 			"year": 2015,
 			"month": 2,
@@ -12,6 +13,7 @@
 	{
 		"title": "First Post",
 		"caption": "Ayy lmao",
+		"file": "first-post.html",
 		"date": {
 			"year": 2014,
 			"month": 11,

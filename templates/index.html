@@ -15,17 +15,17 @@
 <div class="media">
     <div class="media-body">
         <h2>
-            <a href="/post/{{ loop.revindex0 }}">
+            <a href="/post/{{ post.file }}">
             {{ post.title }}
             </a>
         </h2>
         <h6>Posted on {{ post.date.month }}/{{ post.date.day }}/{{ post.date.year }}</h6>
         <p>{{ post.caption }}</p>
-        <p><a href="/post/{{ loop.revindex0 }}">Read more</a></p>
+        <p><a href="/post/{{ post.file }}">Read more</a></p>
     </div>
     {% if post.img %}
         <div class="media-right media-middle">
-            <a href="/post/{{ loop.revindex0 }}">
+            <a href="/post/{{ post.file }}">
                 <img class="media-object" src="{{ post.img }}" alt="...">
             </a>
         </div>
