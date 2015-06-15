@@ -1,14 +1,14 @@
-{% if page_count > 1 %}
+{% if can_paginate %}
 <ul class="pager">
-  {% if page_num > 1 %}
-    <li class="previous"><a href="/">&laquo; Previous {{ page_num - 1 }} / {{ page_count }}</a></li>
-  {% else %}
-    <li class="previous disabled"><a href="#">&laquo; Previous</a></li>
-  {% endif %}
-  {% if page_count > page_num %}
-    <li class="next"><a href="/">Next {{ page_num + 1 }} / {{ page_count }} &raquo;</a></li>
-  {% else %}
-    <li class="next disabled"><a href="#">Next &raquo;</a></li>
-  {% endif %}
+    {% if page_num > 0 %}
+        <li class="previous"><a href="/page/{{ page_num-1 }}">&laquo; Previous</a></li>
+    {% else %}
+        <li class="previous disabled"><a href="#">&laquo; Previous</a></li>
+    {% endif %}
+    {% if next_page_exists %}
+        <li class="next"><a href="/page/{{ page_num+1 }}">Next &raquo;</a></li>
+    {% else %}
+        <li class="next disabled"><a href="#">Next &raquo;</a></li>
+    {% endif %}
 </ul>
 {% endif %}

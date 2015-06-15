@@ -11,6 +11,8 @@ app = Flask(__name__)
 with open('posts.json') as data_file:    
     posts = json.load(data_file)
 
+page_count = 5
+
 # Cheap way of searching
 # Essentially filters the posts based on the search query
 def search_posts(query):
@@ -44,20 +46,29 @@ def get_adj_posts(post_file):
 	return adj_posts
 
 @app.route("/")
-def index():
+@app.route("/page/<page_num>/")
+def index(page_num=0):
+	page_num = int(page_num)
 	posts_to_display = posts
 	query = request.args.get("q")
 	if query:
 		posts_to_display = search_posts(query)
-	return render_template("index.html", page_count=1, page_num=0, posts=posts_to_display, search=query)
+	return render_template("index.html",
+		page_count=page_count,
+		page_num=page_num,
+		posts=posts_to_display[page_num*page_count:(page_num+1)*page_count],
+		search=query,
+		can_paginate=len(posts_to_display) > page_count,
+		next_page_exists=len(posts_to_display[(page_num+1)*page_count:]) > 0
+	)
 
 @app.route("/about/")
 def about():
-	return render_template("about.html", page_count=1, page_num=0)
+	return render_template("about.html")
 
 @app.route("/contact/")
 def contact():
-	return render_template("contact.html", page_count=1, page_num=0)
+	return render_template("contact.html")
 
 @app.route("/post/<path>")
 def post(path):

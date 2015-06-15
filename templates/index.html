@@ -18,40 +18,45 @@
 
 {% block content %}
     {% for post in posts %}
-    <div class="row">
-        <div class="col-lg-8">
-<div class="media">
-    <div class="media-body">
-        <h2>
-            <a href="{% if post.file %}/post/{{ post.file }}{% elif post.links %}{{ post.links.0.0 }}{% endif %}">
-            {{ post.title }}
-            </a>
-        </h2>
-        <h6>Posted on {{ post.date.month }}/{{ post.date.day }}/{{ post.date.year }}</h6>
-        <p>{{ post.caption }}</p>
-        <p>
-            {% if post.links %}
-                {% for link in post.links %}
-                    <a href="{{ link.0 }}">{{ link.1 }}</a> {% if not loop.last %} | {% endif %}
-                {% endfor %}
-            {% elif post.file %}
-                <a href="{% if post.file %}/post/{{ post.file }}{% elif post.link %}{{ post.link }}{% endif %}">Read more</a>
-            {% endif %}
-        </p>
-    </div>
-    {% if post.img %}
-        <div class="media-right media-middle">
-            <a href="{% if post.file %}/post/{{ post.file }}{% elif post.links %}{{ post.links.0.0 }}{% endif %}">
-                <img class="media-object" src="{{ post.img }}" alt="...">
-            </a>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="media">
+                    <div class="media-body">
+                        <h2>
+                            <a href="{% if post.file %}/post/{{ post.file }}{% elif post.links %}{{ post.links.0.0 }}{% endif %}">
+                            {{ post.title }}
+                            </a>
+                        </h2>
+                        <h6>Posted on {{ post.date.month }}/{{ post.date.day }}/{{ post.date.year }}</h6>
+                        <p>{{ post.caption }}</p>
+                        <p>
+                            {% if post.links %}
+                                {% for link in post.links %}
+                                    <a href="{{ link.0 }}">{{ link.1 }}</a> {% if not loop.last %} | {% endif %}
+                                {% endfor %}
+                            {% elif post.file %}
+                                <a href="{% if post.file %}/post/{{ post.file }}{% elif post.link %}{{ post.link }}{% endif %}">Read more</a>
+                            {% endif %}
+                        </p>
+                    </div>
+                    {% if post.img %}
+                        <div class="media-right media-middle">
+                            <a href="{% if post.file %}/post/{{ post.file }}{% elif post.links %}{{ post.links.0.0 }}{% endif %}">
+                                <img class="media-object" src="{{ post.img }}" alt="...">
+                            </a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
         </div>
-    {% endif %}
-</div>
-        </div>
-    </div>
         {% if not loop.last %}
-            <hr>
+        <hr>
         {% endif %}
     {% endfor %}
-    {% include "includes/pagination.html" %}
+
+    <div class="row">
+        <div class="col-lg-8">
+            {% include "includes/pagination.html" %}
+        </div>
+    </div>
 {% endblock %}

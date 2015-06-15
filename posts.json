@@ -1,9 +1,101 @@
 [
 	{
+		"title": "Chess Engine",
+		"caption": "A chess engine where you can make a computer player in Java and have it compete against other computer players by other people.",
+		"links": [
+			["https://github.com/PiJoules/Chess-Engine-Player", "View source code"]
+		],
+		"date": {
+			"year": 2015,
+			"month": 6,
+			"day": 15
+		}
+	},
+	{
+		"title": "@channel",
+		"caption": "The goal of this repo is to replicate the @channel as seen in the anime Steins;Gate. I really love this anime.",
+		"links": [
+			["https://github.com/PiJoules/-channel", "View source code"],
+			["http://atchannel.space/", "Visit website"]
+		],
+		"date": {
+			"year": 2015,
+			"month": 6,
+			"day": 15
+		},
+		"img": "/static/assets/img/@channel.png"
+	},
+	{
+		"title": "Kompact",
+		"caption": "Create and read summarized news articles with Kompact. The API can be used on any web service to generate summaries of text.",
+		"links": [
+			["http://kompactit.com/", "Visit website"]
+		],
+		"date": {
+			"year": 2015,
+			"month": 6,
+			"day": 15
+		}
+	},
+	{
+		"title": "The MLG-ifier",
+		"caption": "A chrome extension that will turn those cheeky websites into Reddit 420 blaze it blunts that MLG pros will find euphoric.",
+		"links": [
+			["https://github.com/PiJoules/MLG-ifier", "View source code"],
+			["https://chrome.google.com/webstore/detail/mlg-ifier/dneebgdgldanagagmfhnphjelnngdcai", "View on Chrome Webstore"]
+		],
+		"date": {
+			"year": 2015,
+			"month": 6,
+			"day": 15
+		}
+	},
+	{
+		"title": "Tic Tac Toe Engine",
+		"caption": "A tictactoe engine where you can make a computer player in Java and have it compete against other computer players by other people.",
+		"links": [
+			["https://github.com/PiJoules/TryHardTicTacToe", "View source code"]
+		],
+		"date": {
+			"year": 2015,
+			"month": 6,
+			"day": 15
+		}
+	},
+	{
+		"title": "Batman on Drugs",
+		"caption": "Just a fun little app I made overnight. This was inspired by a youtube video that my friend showed me and wished someone would make it into an app you can shake.",
+		"links": [
+			["https://github.com/PiJoules/Batman-on-drugs", "View source code"],
+			["https://play.google.com/store/apps/details?id=com.ShakeMe.shake&hl=en", "View on Google Play"]
+		],
+		"date": {
+			"year": 2015,
+			"month": 6,
+			"day": 15
+		},
+		"img": "/static/assets/img/batman.jpeg"
+	},
+	{
+		"title": "Polygon Game",
+		"caption": "An app that my friend and I made for a class. You play as a circle and eat polygons to grow bigger.",
+		"links": [
+			["https://github.com/PiJoules/Polygon", "View source code"],
+			["https://play.google.com/store/apps/details?id=com.test.Polygon&hl=en", "View on Google Play"]
+		],
+		"date": {
+			"year": 2015,
+			"month": 6,
+			"day": 15
+		},
+		"img": "/static/assets/img/polygon.png"
+	},
+	{
 		"title": "GPS Coordinate Extractor",
 		"caption": "iOS app for getting data from areas on a map.",
 		"links": [
-			["https://github.com/PiJoules/GPS_Project", "Source Code"]
+			["https://github.com/PiJoules/GPS_Project", "View source code"],
+			["https://itunes.apple.com/us/app/gps-coordinate-extractor/id763199461?mt=8", "View on App Store"]
 		],
 		"date": {
 			"year": 2015,
