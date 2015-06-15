@@ -59,7 +59,8 @@ def index(page_num=0):
 		posts=posts_to_display[page_num*page_count:(page_num+1)*page_count],
 		search=query,
 		can_paginate=len(posts_to_display) > page_count,
-		next_page_exists=len(posts_to_display[(page_num+1)*page_count:]) > 0
+		next_page_exists=len(posts_to_display[(page_num+1)*page_count:]) > 0,
+		query=query
 	)
 
 @app.route("/about/")
