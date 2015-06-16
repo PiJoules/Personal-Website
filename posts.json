@@ -1,5 +1,18 @@
 [
 	{
+		"title": "Generating Polyominoes (/r/dailyprogrammer Challenge #218)",
+		"caption": "A polyomino is a collection of cells (equal-sized squares) which are connected, that is, each cell shares a border with another one. Think about tetris pieces, those would be tetrominoes - they each have four squares, and there are 5 unique combinations of their squares into unique shapes. You will be given a single integer, this is the polyomino order to calculate and draw",
+		"file": "polyominoes.html",
+		"links": [
+			["https://github.com/PiJoules/polyominoes", "View source code"]
+		],
+		"date": {
+			"year": 2015,
+			"month": 6,
+			"day": 16
+		}
+	},
+	{
 		"title": "Lumberjack Pile Problem (/r/dailyprogrammer Challenge #217)",
 		"caption": "For today's challenge the lumberjacks pile their logs from the forest in a grid n x n. Before using us to solve their inventory woes they randomly just put logs in random piles. Currently the pile sizes vary and they want to even them out. So let us help them out.",
 		"file": "lumberjack-pile-problem.html",

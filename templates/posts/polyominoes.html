@@ -1,0 +1,281 @@
+{% extends "post-base.html" %}
+
+{% block content_title %}Generating Polyominoes{% endblock %}
+
+{% block post_content %}
+<p>
+	<ul>
+		<li><a href="#solution">My solution</a></li>
+		<li><a href="#usage">Usage</a></li>
+		<li><a href="#thoughts">My thought process</a></li>
+		<li><a target="_blank" href="https://github.com/PiJoules/polyominoes">Source code</a></li>
+	</ul>
+</p>
+
+<p>
+	The problem and other information about the challenge is available on <a target="_blank" href="https://www.reddit.com/r/dailyprogrammer/comments/398mtv/20150610_challenge_218_intermediate_generating/">the original post</a> at <a target="_blank" href="https://www.reddit.com/r/dailyprogrammer/">/r/dailyprogrammer</a>. This post explains my solution to the problem and my thought process for it. Other possible solutions in different languages are also available on the original Reddit post.
+</p>
+<p></p>
+
+<h2 id="solution">My solution</h2>
+<h4>Polyominoes.py</h4>
+<!-- HTML generated using hilite.me --><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">from</span> <span style="color: #0e84b5; font-weight: bold">copy</span> <span style="color: #008800; font-weight: bold">import</span> deepcopy
+
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Pattern</span>():
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">__init__</span>(<span style="color: #007020">self</span>, width, coords<span style="color: #333333">=</span>[], marker<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;X&#39;</span>, empty<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39; &#39;</span>):
+		<span style="color: #007020">self</span><span style="color: #333333">.</span>coords <span style="color: #333333">=</span> coords <span style="color: #888888"># list of tuples</span>
+		<span style="color: #007020">self</span><span style="color: #333333">.</span>w <span style="color: #333333">=</span> width
+		<span style="color: #007020">self</span><span style="color: #333333">.</span>marker <span style="color: #333333">=</span> marker
+		<span style="color: #007020">self</span><span style="color: #333333">.</span>empty <span style="color: #333333">=</span> empty
+
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">get_coords</span>(<span style="color: #007020">self</span>):
+		<span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>coords
+
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">add_coord</span>(<span style="color: #007020">self</span>, x, y):
+		<span style="color: #007020">self</span><span style="color: #333333">.</span>coords<span style="color: #333333">.</span>append( (x,y) )
+
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">get_grid</span>(<span style="color: #007020">self</span>):
+		w <span style="color: #333333">=</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>w
+		grid <span style="color: #333333">=</span> [[<span style="color: #007020">self</span><span style="color: #333333">.</span>empty <span style="color: #008800; font-weight: bold">for</span> x <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(w)] <span style="color: #008800; font-weight: bold">for</span> y <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(w)]
+		<span style="color: #008800; font-weight: bold">for</span> coord <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>coords:
+			x <span style="color: #333333">=</span> coord[<span style="color: #0000DD; font-weight: bold">0</span>]
+			y <span style="color: #333333">=</span> coord[<span style="color: #0000DD; font-weight: bold">1</span>]
+			grid[y][x] <span style="color: #333333">=</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>marker
+		<span style="color: #008800; font-weight: bold">return</span> grid
+
+	<span style="color: #888888"># Increae the size of the grid by 1</span>
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">increase_size</span>(<span style="color: #007020">self</span>, amount<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">1</span>):
+		<span style="color: #007020">self</span><span style="color: #333333">.</span>w <span style="color: #333333">+=</span> amount
+
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">clone</span>(<span style="color: #007020">self</span>):
+		<span style="color: #008800; font-weight: bold">return</span> Pattern(<span style="color: #007020">self</span><span style="color: #333333">.</span>w, deepcopy(<span style="color: #007020">self</span><span style="color: #333333">.</span>coords), <span style="color: #007020">self</span><span style="color: #333333">.</span>marker, <span style="color: #007020">self</span><span style="color: #333333">.</span>empty)
+
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">pretty_print_grid</span>(<span style="color: #007020">self</span>):
+		grid <span style="color: #333333">=</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>get_grid()
+		<span style="color: #008800; font-weight: bold">for</span> row <span style="color: #000000; font-weight: bold">in</span> grid:
+			<span style="color: #008800; font-weight: bold">print</span> row
+
+	<span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">	Return an array of coordinates of all possible spaces adascent to an existing marker</span>
+<span style="color: #DD4422">	&quot;&quot;&quot;</span>
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">get_possible_squares</span>(<span style="color: #007020">self</span>):
+		marker <span style="color: #333333">=</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>marker
+		empty <span style="color: #333333">=</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>empty
+		w <span style="color: #333333">=</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>w
+
+		possible_squares <span style="color: #333333">=</span> [] <span style="color: #888888"># array of coordinates</span>
+		coords <span style="color: #333333">=</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>coords
+		<span style="color: #008800; font-weight: bold">for</span> coord <span style="color: #000000; font-weight: bold">in</span> coords:
+			x <span style="color: #333333">=</span> coord[<span style="color: #0000DD; font-weight: bold">0</span>]
+			y <span style="color: #333333">=</span> coord[<span style="color: #0000DD; font-weight: bold">1</span>]
+			<span style="color: #008800; font-weight: bold">if</span> y <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #000000; font-weight: bold">and</span> <span style="color: #000000; font-weight: bold">not</span> (x, y<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>) <span style="color: #000000; font-weight: bold">in</span> coords:
+				possible_squares<span style="color: #333333">.</span>append( (x, y<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>) )
+			<span style="color: #008800; font-weight: bold">if</span> y <span style="color: #333333">&lt;</span> w<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span> <span style="color: #000000; font-weight: bold">and</span> <span style="color: #000000; font-weight: bold">not</span> (x, y<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>) <span style="color: #000000; font-weight: bold">in</span> coords:
+				possible_squares<span style="color: #333333">.</span>append( (x, y<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>) )
+			<span style="color: #008800; font-weight: bold">if</span> x <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #000000; font-weight: bold">and</span> <span style="color: #000000; font-weight: bold">not</span> (x<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>, y) <span style="color: #000000; font-weight: bold">in</span> coords:
+				possible_squares<span style="color: #333333">.</span>append( (x<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>, y) )
+			<span style="color: #008800; font-weight: bold">if</span> x <span style="color: #333333">&lt;</span> w<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span> <span style="color: #000000; font-weight: bold">and</span> <span style="color: #000000; font-weight: bold">not</span> (x<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>, y) <span style="color: #000000; font-weight: bold">in</span> coords:
+				possible_squares<span style="color: #333333">.</span>append( (x<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>, y) )
+
+		<span style="color: #008800; font-weight: bold">return</span> possible_squares
+
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">is_transformation_of</span>(<span style="color: #007020">self</span>, pattern):
+		<span style="color: #008800; font-weight: bold">if</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>w <span style="color: #333333">!=</span> pattern<span style="color: #333333">.</span>w:
+			<span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">False</span>
+
+		variations <span style="color: #333333">=</span> pattern<span style="color: #333333">.</span>get_variations()
+		<span style="color: #008800; font-weight: bold">for</span> variation <span style="color: #000000; font-weight: bold">in</span> variations:
+			<span style="color: #008800; font-weight: bold">if</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>equals(variation):
+				<span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">True</span>
+
+		<span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">False</span>
+
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">equals</span>(<span style="color: #007020">self</span>, pattern):
+		coords <span style="color: #333333">=</span> pattern<span style="color: #333333">.</span>get_coords()
+		<span style="color: #008800; font-weight: bold">if</span> <span style="color: #007020">len</span>(coords) <span style="color: #333333">!=</span> <span style="color: #007020">len</span>(<span style="color: #007020">self</span><span style="color: #333333">.</span>coords):
+			<span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">False</span>
+
+		<span style="color: #008800; font-weight: bold">for</span> coord <span style="color: #000000; font-weight: bold">in</span> coords:
+			<span style="color: #008800; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">not</span> coord <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>coords:
+				<span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">False</span>
+
+		<span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">True</span>
+
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">get_variations</span>(<span style="color: #007020">self</span>):
+		variations <span style="color: #333333">=</span> []
+		rotation <span style="color: #333333">=</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>clone()
+		<span style="color: #008800; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(<span style="color: #0000DD; font-weight: bold">4</span>):
+			rotation <span style="color: #333333">=</span> rotation<span style="color: #333333">.</span>rotated_pattern()
+			reflection <span style="color: #333333">=</span> rotation<span style="color: #333333">.</span>reflected_pattern()
+			variations<span style="color: #333333">.</span>append(rotation<span style="color: #333333">.</span>normalized())
+			variations<span style="color: #333333">.</span>append(reflection<span style="color: #333333">.</span>normalized())
+		<span style="color: #008800; font-weight: bold">return</span> variations
+
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">normalized</span>(<span style="color: #007020">self</span>):
+		x0 <span style="color: #333333">=</span> <span style="color: #007020">min</span>(<span style="color: #007020">self</span><span style="color: #333333">.</span>coords, key<span style="color: #333333">=</span><span style="color: #008800; font-weight: bold">lambda</span> coord: coord[<span style="color: #0000DD; font-weight: bold">0</span>])[<span style="color: #0000DD; font-weight: bold">0</span>]
+		y0 <span style="color: #333333">=</span> <span style="color: #007020">min</span>(<span style="color: #007020">self</span><span style="color: #333333">.</span>coords, key<span style="color: #333333">=</span><span style="color: #008800; font-weight: bold">lambda</span> coord: coord[<span style="color: #0000DD; font-weight: bold">1</span>])[<span style="color: #0000DD; font-weight: bold">1</span>]
+		<span style="color: #008800; font-weight: bold">return</span> Pattern(<span style="color: #007020">self</span><span style="color: #333333">.</span>w, [ (x<span style="color: #333333">-</span>x0, y<span style="color: #333333">-</span>y0) <span style="color: #008800; font-weight: bold">for</span> x,y <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>coords ], <span style="color: #007020">self</span><span style="color: #333333">.</span>marker, <span style="color: #007020">self</span><span style="color: #333333">.</span>empty)
+
+	<span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">	Return a copy of the pattern but rotated 90 deg. clockwise</span>
+<span style="color: #DD4422">	&quot;&quot;&quot;</span>
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">rotated_pattern</span>(<span style="color: #007020">self</span>):
+		<span style="color: #008800; font-weight: bold">return</span> Pattern(<span style="color: #007020">self</span><span style="color: #333333">.</span>w, [ (y, <span style="color: #333333">-</span>x) <span style="color: #008800; font-weight: bold">for</span> x,y <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>coords ], <span style="color: #007020">self</span><span style="color: #333333">.</span>marker, <span style="color: #007020">self</span><span style="color: #333333">.</span>empty)
+
+	<span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">	Return a copy of the pattern but reflected across the y-axis</span>
+<span style="color: #DD4422">	&quot;&quot;&quot;</span>
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">reflected_pattern</span>(<span style="color: #007020">self</span>):
+		<span style="color: #008800; font-weight: bold">return</span> Pattern(<span style="color: #007020">self</span><span style="color: #333333">.</span>w, [ (<span style="color: #333333">-</span>x, y) <span style="color: #008800; font-weight: bold">for</span> x,y <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>coords ], <span style="color: #007020">self</span><span style="color: #333333">.</span>marker, <span style="color: #007020">self</span><span style="color: #333333">.</span>empty)
+
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Polyomino</span>():
+
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">__init__</span>(<span style="color: #007020">self</span>, n<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">4</span>, marker<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;X&#39;</span>, empty<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39; &#39;</span>):
+		<span style="color: #007020">self</span><span style="color: #333333">.</span>n <span style="color: #333333">=</span> n
+		<span style="color: #007020">self</span><span style="color: #333333">.</span>marker <span style="color: #333333">=</span> marker
+		<span style="color: #007020">self</span><span style="color: #333333">.</span>empty <span style="color: #333333">=</span> empty
+		<span style="color: #007020">self</span><span style="color: #333333">.</span>patterns <span style="color: #333333">=</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>find_patterns(n)
+		<span style="color: #007020">self</span><span style="color: #333333">.</span>remove_duplicates()
+
+	<span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">	Find patterns by adding an adjascent square to the map of</span>
+<span style="color: #DD4422">	all possible patterns in one polyomino below it.</span>
+
+<span style="color: #DD4422">	For example, to find all 3-ominoes, take each possible 2-omino and append an </span>
+<span style="color: #DD4422">	adjascent square in all possible places to form a 3-omino, then remove the duplicates.</span>
+<span style="color: #DD4422">	&quot;&quot;&quot;</span>
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">find_patterns</span>(<span style="color: #007020">self</span>, n):
+		marker <span style="color: #333333">=</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>marker
+		empty <span style="color: #333333">=</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>empty
+
+		possible_patterns <span style="color: #333333">=</span> []
+
+		<span style="color: #888888"># Stopping condition</span>
+		<span style="color: #008800; font-weight: bold">if</span> n <span style="color: #333333">&lt;=</span> <span style="color: #0000DD; font-weight: bold">1</span>:
+			<span style="color: #008800; font-weight: bold">return</span> [ Pattern(<span style="color: #0000DD; font-weight: bold">1</span>, [(<span style="color: #0000DD; font-weight: bold">0</span>,<span style="color: #0000DD; font-weight: bold">0</span>)], marker, empty) ]
+
+		patterns <span style="color: #333333">=</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>find_patterns(n<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>)
+
+		<span style="color: #888888"># Increae the size of each grid by 1</span>
+		<span style="color: #008800; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(<span style="color: #007020">len</span>(patterns)):
+			patterns[i]<span style="color: #333333">.</span>increase_size()
+
+		<span style="color: #008800; font-weight: bold">for</span> pattern <span style="color: #000000; font-weight: bold">in</span> patterns:
+			possible_squares <span style="color: #333333">=</span> pattern<span style="color: #333333">.</span>get_possible_squares()
+			<span style="color: #008800; font-weight: bold">for</span> square <span style="color: #000000; font-weight: bold">in</span> possible_squares:
+				pattern_clone <span style="color: #333333">=</span> pattern<span style="color: #333333">.</span>clone()
+				x <span style="color: #333333">=</span> square[<span style="color: #0000DD; font-weight: bold">0</span>]
+				y <span style="color: #333333">=</span> square[<span style="color: #0000DD; font-weight: bold">1</span>]
+				pattern_clone<span style="color: #333333">.</span>add_coord(x, y)
+				possible_patterns<span style="color: #333333">.</span>append( pattern_clone )
+
+		<span style="color: #008800; font-weight: bold">return</span> possible_patterns
+
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">remove_duplicates</span>(<span style="color: #007020">self</span>):
+		<span style="color: #008800; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(<span style="color: #007020">len</span>(<span style="color: #007020">self</span><span style="color: #333333">.</span>patterns)):
+			<span style="color: #008800; font-weight: bold">for</span> j <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(<span style="color: #007020">len</span>(<span style="color: #007020">self</span><span style="color: #333333">.</span>patterns)<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>, i, <span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>):
+				<span style="color: #008800; font-weight: bold">if</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>patterns[i]<span style="color: #333333">.</span>is_transformation_of(<span style="color: #007020">self</span><span style="color: #333333">.</span>patterns[j]):
+					<span style="color: #008800; font-weight: bold">del</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>patterns[j]
+
+	<span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">	A pattern is a duplicate if it can look like an existing one</span>
+<span style="color: #DD4422">	either by translation, rotation, or reflection. (Translation </span>
+<span style="color: #DD4422">	in this case can be ignored since all patterns will start on</span>
+<span style="color: #DD4422">	the upper left most corner.)</span>
+<span style="color: #DD4422">	&quot;&quot;&quot;</span>
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">pattern_does_exist</span>(<span style="color: #007020">self</span>, pat, possible_patterns):
+		<span style="color: #008800; font-weight: bold">for</span> pat2 <span style="color: #000000; font-weight: bold">in</span> possible_patterns:
+			<span style="color: #008800; font-weight: bold">if</span> pat<span style="color: #333333">.</span>is_transformation_of(pat2):
+				<span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">True</span>
+		<span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">False</span>
+
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">print_results</span>(<span style="color: #007020">self</span>):
+		<span style="color: #008800; font-weight: bold">for</span> pattern <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">self</span><span style="color: #333333">.</span>patterns:
+			<span style="color: #008800; font-weight: bold">print</span> <span style="background-color: #fff0f0">&quot;Pattern:&quot;</span>
+			<span style="color: #008800; font-weight: bold">for</span> row <span style="color: #000000; font-weight: bold">in</span> pattern<span style="color: #333333">.</span>get_grid():
+				<span style="color: #008800; font-weight: bold">print</span> <span style="background-color: #fff0f0">&quot;&quot;</span><span style="color: #333333">.</span>join(row)
+			<span style="color: #008800; font-weight: bold">print</span> <span style="background-color: #fff0f0">&quot;&quot;</span>
+</pre>
+
+
+
+<h2 id="usage">Usage</h2>
+<p>
+	The code can be run by importing the Polyomino class and passing the number as an argument.
+</p>
+<h4>testbench.py</h4>
+<!-- HTML generated using hilite.me --><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">sys</span>
+<span style="color: #008800; font-weight: bold">from</span> <span style="color: #0e84b5; font-weight: bold">Polyominoes</span> <span style="color: #008800; font-weight: bold">import</span> Polyomino
+
+<span style="color: #008800; font-weight: bold">for</span> line <span style="color: #000000; font-weight: bold">in</span> sys<span style="color: #333333">.</span>stdin:
+	num <span style="color: #333333">=</span> <span style="color: #007020">int</span>(line)
+	p <span style="color: #333333">=</span> Polyomino(num)
+	<span style="color: #008800; font-weight: bold">print</span> num
+	<span style="color: #008800; font-weight: bold">print</span> <span style="background-color: #fff0f0">&quot;# of results:&quot;</span>, <span style="color: #007020">len</span>(p<span style="color: #333333">.</span>patterns) 
+	p<span style="color: #333333">.</span>print_results()
+</pre>
+
+<p>
+	Saving various inputs into a file will return each possible output, though for this example, only the number 4 will be tested
+</p>
+<h4>sample.txt</h4>
+<pre>
+4
+</pre>
+<p>Piping the contents of this file to the testbench script returns</p>
+<pre>
+$ cat sample.txt | python testbench.py
+4
+# of results: 5
+Pattern:
+XX  
+X   
+X   
+
+
+Pattern:
+XX  
+XX  
+
+
+
+Pattern:
+X   
+XX  
+X   
+
+
+Pattern:
+X   
+X   
+X   
+X   
+
+Pattern:
+X   
+XX  
+ X  
+
+</pre>
+
+
+<h2 id="thoughts">My thought process</h2>
+<p>
+	I decided I would need two classes: one for accepting the number and finding every unique pattern, and one for the pattern itself. Havign a pattern class would allow me to simplify checking if two pattern objects are the same.
+</p>
+<h3>The Polyomino class</h3>
+<p>
+	In order to find all patterns that can be created, I had to first come up with all possible legal patterns and remove any duplicates. My approach to this was to fist get all possible patterns of polyominoes given <code>num-1</code>, and then marking an empty square adjascent to any marked square. This would fulfill the requirement of all marks being directly adjascent to each other. Thismethod for finding all possible patterns would be called recursively with a stopping condition of <code>n-1==1</code>. After generating all legal patterns, duplicates just then had to be removed. The Pattern class provided a method for checking if a pattern was a transformation of another patter.
+</p>
+<h3>The Pattern class</h3>
+<p>
+	Having a pattern class also allowed me to save each pattern as either a list of tuples representing the coordinates of each mark in the pattern, and a 2D array representation of the pattern. Both are usefull to me, so I will need both representations. The pattern class also allows me to establish methods for checking if this paticular pattern is similar to another pattern. According to the original post, a pattern is unique only if it cannot be translated, rotated, reflected, or any combination of the three to form another pattern.
+</p>
+<p>
+	The way I check if this pattern is a transformation of another one is by generating all possible transformations of the passed pattern. This is done by getting all rotated variations of the original pattern, and each rotation's respective reflection across the y-axis. A pattern is considered a transformation of another if it is equal to any of the variations of the passed pattern.
+</p>
+<p>
+	The code is complete since I have a way of finding all possible patterns given a number and ignoring any duplicates.
+</p>
+
+{% endblock %}

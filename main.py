@@ -81,10 +81,7 @@ def contact():
 @app.route("/post/<path>")
 def post(path):
 	try:
-		print path
-		post = get_post_from_path(path)
-		print post
-		return render_template("posts/" + path, adj_posts=get_adj_posts(path), post=post)
+		return render_template("posts/" + path, adj_posts=get_adj_posts(path), post=get_post_from_path(path))
 	except:
 		abort(404)
 
