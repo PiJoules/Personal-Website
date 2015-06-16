@@ -34,6 +34,13 @@ def search_posts(query):
 	sorted(matches, key=lambda match: match[1], reverse=True)
 	return [m[0] for m in matches]
 
+def get_post_from_path(path):
+	for post in posts:
+		if "file" in post and post["file"] == path:
+			return post
+		elif "links" in post and post["links"][0] == path:
+			return post
+
 def get_adj_posts(post_file):
 	adj_posts = {}
 	for i in range(len(posts)):
@@ -74,7 +81,10 @@ def contact():
 @app.route("/post/<path>")
 def post(path):
 	try:
-		return render_template("posts/" + path, adj_posts=get_adj_posts(path))
+		print path
+		post = get_post_from_path(path)
+		print post
+		return render_template("posts/" + path, adj_posts=get_adj_posts(path), post=post)
 	except:
 		abort(404)
 

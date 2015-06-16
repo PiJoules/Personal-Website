@@ -1,5 +1,18 @@
 [
 	{
+		"title": "Lumberjack Pile Problem (/r/dailyprogrammer Challenge #217)",
+		"caption": "For today's challenge the lumberjacks pile their logs from the forest in a grid n x n. Before using us to solve their inventory woes they randomly just put logs in random piles. Currently the pile sizes vary and they want to even them out. So let us help them out.",
+		"file": "lumberjack-pile-problem.html",
+		"links": [
+			["https://github.com/PiJoules/Lumberjack-Pile-Problem", "View source code"]
+		],
+		"date": {
+			"year": 2015,
+			"month": 6,
+			"day": 15
+		}
+	},
+	{
 		"title": "Chess Engine",
 		"caption": "A chess engine where you can make a computer player in Java and have it compete against other computer players by other people.",
 		"links": [

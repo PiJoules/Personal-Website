@@ -3,24 +3,25 @@
 {% block content %}
 <div class="row">
 	<div class="col-lg-8">
+	<h6>Posted on {{ post.date.month }}/{{ post.date.day }}/{{ post.date.year }}</h6>
 	{% block post_content %}{% endblock %}
 	</div>
 </div>
 
+{% if adj_posts %}
 <div class="row">
 	<div class="col-lg-8">
 		<nav>
 			<ul class="pager">
-				{% if adj_posts %}
-					{% if adj_posts.next %}
-					<li class="previous"><a href="{% if adj_posts.next.file %}/post/{{ adj_posts.next.file }}{% elif adj_posts.next.links %}{{ adj_posts.next.links.0.0 }}{% endif %}"><span aria-hidden="true">&larr;</span> {{ adj_posts.next.title }}</a></li>
-					{% endif %}
-					{% if adj_posts.prev %}
-					<li class="next"><a href="{% if adj_posts.prev.file %}/post/{{ adj_posts.prev.file }}{% elif adj_posts.prev.links %}{{ adj_posts.prev.links.0.0 }}{% endif %}">{{ adj_posts.prev.title }} <span aria-hidden="true">&rarr;</span></a></li>
-					{% endif %}
+				{% if adj_posts.prev %}
+				<li class="previous"><a href="{% if adj_posts.prev.file %}/post/{{ adj_posts.prev.file }}{% elif adj_posts.prev.links %}{{ adj_posts.prev.links.0.0 }}{% endif %}"><span aria-hidden="true">&larr;</span> {{ adj_posts.prev.title }}</a></li>
+				{% endif %}
+				{% if adj_posts.next %}
+				<li class="next"><a href="{% if adj_posts.next.file %}/post/{{ adj_posts.next.file }}{% elif adj_posts.next.links %}{{ adj_posts.next.links.0.0 }}{% endif %}">{{ adj_posts.next.title }} <span aria-hidden="true">&rarr;</span></a></li>
 				{% endif %}
 			</ul>
 		</nav>
 	</div>
 </div>
+{% endif %}
 {% endblock %}

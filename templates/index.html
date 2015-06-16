@@ -30,12 +30,14 @@
                         <h6>Posted on {{ post.date.month }}/{{ post.date.day }}/{{ post.date.year }}</h6>
                         <p>{{ post.caption }}</p>
                         <p>
+                            {% if post.file %}
+                                <a href="{% if post.file %}/post/{{ post.file }}{% elif post.link %}{{ post.link }}{% endif %}">Read more</a>
+                            {% endif %}
+                            {% if post.file and post.links %} | {% endif %}
                             {% if post.links %}
                                 {% for link in post.links %}
                                     <a href="{{ link.0 }}">{{ link.1 }}</a> {% if not loop.last %} | {% endif %}
                                 {% endfor %}
-                            {% elif post.file %}
-                                <a href="{% if post.file %}/post/{{ post.file }}{% elif post.link %}{{ post.link }}{% endif %}">Read more</a>
                             {% endif %}
                         </p>
                     </div>
