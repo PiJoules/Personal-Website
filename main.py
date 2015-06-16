@@ -19,7 +19,7 @@ def search_posts(query):
 	matches = []
 	for post in posts:
 		if "file" in post:
-			content = render_template("posts/" + post["file"])
+			content = render_template("posts/" + post["file"], post=post)
 			count = content.count(query)
 			if count > 0:
 				matches.append( (post, count) )
