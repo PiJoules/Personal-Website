@@ -14,6 +14,10 @@ threadsafe: yes
 
 # Handlers define how to route requests to your application.
 handlers:
+- url: /static/assets/log-spiral.svg
+  static_files: static/assets/log-spiral.svg
+  upload: static/assets/log-spiral.svg
+  mime_type: image/svg+xml
 
 # App Engine serves and caches static files contained in the listed directories
 # (and subdirectories). Uncomment and set the directory as needed.
