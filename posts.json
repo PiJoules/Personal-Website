@@ -1,5 +1,15 @@
 [
 	{
+		"title": "Fourier Transform Notes",
+		"caption": "My notes for the first week of Transforms II.",
+		"file": "fourier-transform.html",
+		"date": {
+			"year": 2015,
+			"month": 7,
+			"day": 8
+		}
+	},
+	{
 		"title": "Generating Polyominoes (/r/dailyprogrammer Challenge #218)",
 		"caption": "A polyomino is a collection of cells (equal-sized squares) which are connected, that is, each cell shares a border with another one. Think about tetris pieces, those would be tetrominoes - they each have four squares, and there are 5 unique combinations of their squares into unique shapes. You will be given a single integer, this is the polyomino order to calculate and draw",
 		"file": "polyominoes.html",
