@@ -1,0 +1,80 @@
+body {
+	/*background-image: url("../images/sentry.jpg");
+	background-repeat: repeat-y;
+	background-size: 100%;*/
+
+	margin-top: 50px;
+}
+
+#background-img {
+	position: fixed;
+	margin-top: -50px;
+	width: 100%;
+	z-index: -1;
+}
+
+#profile-pic {
+	width: 100%;
+	border-radius: 1000px;
+	margin-top: 50%;
+}
+
+.navbar {
+	background-color: #eeeeee;
+	border: 0;
+}
+
+.navbar-nav > li {
+	margin-left: 20px;
+}
+
+#projects-container {
+	width: 100%;
+	margin-top: 130px;
+	background-color: white;
+}
+
+.project {
+	padding-top: 5%;
+}
+
+#footer {
+	background-color: white;
+}
+
+/* If less than 768px */
+@media screen and (max-width: 787px){
+
+}
+
+
+/* Utility styles */
+
+.vertical-center {
+	min-height: 100%;
+	min-height: 100vh;
+
+	display: flex;
+	align-items: center;
+}
+
+.padding-top-50 {
+	padding-top: 50px;
+}
+
+.text-align-center{
+	text-align: center;
+}
+
+.color-lightgray {
+	color: lightgray;
+}
+
+.color-333 {
+	color: #333;
+}
+
+.position-fixed {
+	position: fixed;
+	z-index: 1000;
+}
