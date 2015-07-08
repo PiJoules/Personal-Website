@@ -1,0 +1,166 @@
+@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=e89ba52a-fa21-49f7-a279-aff446e89183");
+@font-face {
+	font-family: "DIN Next W01 Light";
+	src: url("/fonts/3e0b2cd7-9657-438b-b4af-e04122e8f1f7.eot?#iefix");
+	src: url("/fonts/3e0b2cd7-9657-438b-b4af-e04122e8f1f7.eot?#iefix") format("eot"), url("/fonts/bc176270-17fa-4c78-a343-9fe52824e501.woff") format("woff"), url("/fonts/3516f91d-ac48-42cd-acfe-1be691152cc4.ttf") format("truetype"), url("/fonts/d1b1e866-a411-42ba-8f75-72bf28e23694.svg#d1b1e866-a411-42ba-8f75-72bf28e23694.svg") format("svg");
+}
+@font-face {
+	font-family: "DIN Next W01 Regular";
+	src: url("/fonts/da088ecc-a53c-4831-a95b-6fd81b5b338a.eot?#iefix");
+	src: url("/fonts/da088ecc-a53c-4831-a95b-6fd81b5b338a.eot?#iefix") format("eot"), url("/fonts/c5a7f89e-15b6-49a9-8259-5ea665e72191.woff") format("woff"), url("/fonts/868c94b5-ca49-46b7-b62b-297f8d861125.ttf") format("truetype"), url("/fonts/e3145f65-29b5-4f7f-8c6e-2dc135021b6a.svg#e3145f65-29b5-4f7f-8c6e-2dc135021b6a.svg") format("svg");
+}
+
+body {
+	background-color: rgba(234, 234, 224, 0.9);
+}
+
+#top-row {
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+#name {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	max-width: 100%;
+}
+
+.intro {
+	padding-top: 5%;
+	height: 300px;
+	font-family: "DIN Next W01 Light", Helvetica, Arial, sans-serif;
+}
+
+#intro1 {
+	background-color: #F5F5DC;
+}
+
+#intro2 {
+	background-color: #00356c;
+	color: white;
+}
+
+/*For those with 300xp height*/
+.img-container {
+	overflow: hidden;
+	height: 300px;
+}
+
+/*Same as previous but 600px*/
+.img-container2 {
+	overflow: hidden;
+	height: 600px;
+}
+
+.row {
+	height: 300px;
+}
+
+.col-md {
+	height: 300px;
+}
+
+.forum-content:after {
+	bottom: auto;
+	left: auto;
+	right: 100%;
+	top: 20%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-right-color: #F5F5DC;
+	border-width: 20px;
+	margin-top: -30px;
+}
+
+@media screen and (max-width: 767px){
+
+	.col-md {
+		height: auto;
+	}
+
+	.img-container {
+		height: auto;
+	}
+
+	.img-container2 {
+		height: auto;
+	}
+
+	#hello {
+		margin-top: 0;
+	}
+
+	/*To reallocate the space on h1*/
+	.intro {
+		height: auto;
+		padding-top: 20px; 
+		padding-bottom: 10px;
+	}
+
+	.row {
+		height: auto;
+	}
+
+	.forum-content:after {
+		bottom: 100%;
+		left: 50%;
+		top: -30px;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		border-bottom-color: #F5F5DC;
+		border-width: 30px;
+		margin-left: -30px;
+	}
+
+}
+
+
+
+/* Utility Functions */
+
+.width-100 {
+	width: 100%;
+}
+
+.height-100 {
+	height: 100%;
+}
+
+.height-300px {
+	height: 300px;
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}
+
+.margin-top-m50px {
+	margin-top: -50px;
+}
+
+.margin-top-0 {
+	margin-top: 0;
+}
+
+.margin-left-right-0 {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.padding-left-right-0 {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.text-align-center {
+	text-align: center;
+}
