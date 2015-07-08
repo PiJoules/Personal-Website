@@ -23,7 +23,7 @@
 	font-size: xx-large;
 }
 #icon-explanation > .col-md-4 {
-	
+
 }
 
 .numbers > * {
@@ -41,7 +41,7 @@
 	background-image: url('/images/soldier.jpg');
 }
 
-.logo {
+/*.logo {
 	border-radius: 1000px !important;
 	width: 100px !important;
 	height: auto !important;
@@ -50,7 +50,7 @@
 .logo > img {
 	width: 100% !important;
 	height: auto !important;
-}
+}*/
 
 .parallax {
 	padding-top: 200px;
@@ -154,4 +154,3 @@
 .background-color-lightgray {
 	background-color: lightgray;
 }
-

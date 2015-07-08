@@ -31,11 +31,12 @@
 						<span class="icon-bar"></span>
 					</button>
 
-					<a class="navbar-brand" href="/">
+					<div class="navbar-brand" href="/">
 						<div class="logo">
-							<img src="images/somephoto.jpg"/>
+							<img src="https://s3.amazonaws.com/creativetim_bucket/new_logo.png">
 						</div>
-					</a>
+						<p>Leonard Chan</p>
+					</div>
 				</div>
 
 
@@ -48,7 +49,7 @@
 						<li class="active">
 							<a href="/">
 								<i class="glyphicon glyphicon-home" aria-hidden="true"></i>
-								<p>Home</p>    
+								<p>Home</p>
 							</a>
 						</li>
 						<li>
@@ -150,7 +151,7 @@
 					<div class="col-md-8">
 
 						<div class="card">
-							<div class="thumbnail">           
+							<div class="thumbnail">
 								<img class="" src="images/kompact.png" />
 								<a href="http://kompactit.com/">
 									<div class="thumb-cover"></div>
@@ -173,7 +174,7 @@
 										<h4 class="icon-objc"></h4>
 									</div>
 									<div class="clearfix"></div>
-								</div> 
+								</div>
 							</div>
 							<div class="card-info">
 								<div class="moving">
@@ -193,7 +194,7 @@
 					<div class="col-md-4">
 
 						<div class="card">
-							<div class="thumbnail">           
+							<div class="thumbnail">
 								<img alt="Opt wizard thumbnail" src="images/gps.png" />
 								<a href="https://itunes.apple.com/us/app/gps-coordinate-extractor/id763199461?mt=8">
 									<div class="thumb-cover"></div>
@@ -205,7 +206,7 @@
 										<h4 class="icon-objc"></h4>
 									</div>
 									<div class="clearfix"></div>
-								</div> 
+								</div>
 							</div>
 							<div class="card-info">
 								<div class="moving">
@@ -228,7 +229,7 @@
 				<div class="row">
 					<div class="col-md-4">
 						<div class="card">
-							<div class="thumbnail">           
+							<div class="thumbnail">
 								<img alt="Opt wizard thumbnail" src="images/polygon.png" />
 								<a href="https://github.com/PiJoules/TestApp">
 									<div class="thumb-cover"></div>
@@ -243,7 +244,7 @@
 										<h4 class="icon-php"></h4>
 									</div>
 									<div class="clearfix"></div>
-								</div> 
+								</div>
 							</div>
 							<div class="card-info">
 								<div class="moving">
@@ -262,7 +263,7 @@
 
 					<div class="col-md-8">
 						<div class="card">
-							<div class="thumbnail">           
+							<div class="thumbnail">
 								<img alt="Opt wizard thumbnail" src="images/this-website.png" />
 								<a href="/">
 									<div class="thumb-cover"></div>
@@ -279,7 +280,7 @@
 										<h4 class="icon-javascript"></h4>
 									</div>
 									<div class="clearfix"></div>
-								</div> 
+								</div>
 							</div>
 							<div class="card-info">
 								<div class="moving">
@@ -300,7 +301,7 @@
 				<div class="row">
 					<div class="col-md-4">
 						<div class="card">
-							<div class="thumbnail">           
+							<div class="thumbnail">
 								<img alt="Opt wizard thumbnail" src="images/batman.jpeg" />
 								<a href="https://github.com/PiJoules/Batman-on-drugs">
 									<div class="thumb-cover"></div>
@@ -312,7 +313,7 @@
 										<h4 class="icon-java"></h4>
 									</div>
 									<div class="clearfix"></div>
-								</div> 
+								</div>
 							</div>
 							<div class="card-info">
 								<div class="moving">
@@ -332,7 +333,7 @@
 
 					<div class="col-md-4">
 						<div class="card">
-							<div class="thumbnail">           
+							<div class="thumbnail">
 								<img alt="Opt wizard thumbnail" src="images/owl.png" />
 								<a href="http://clever-spirit-808.appspot.com/">
 									<div class="thumb-cover"></div>
@@ -349,7 +350,7 @@
 										<h4 class="icon-javascript"></h4>
 									</div>
 									<div class="clearfix"></div>
-								</div> 
+								</div>
 							</div>
 							<div class="card-info">
 								<div class="moving">
@@ -369,7 +370,7 @@
 
 					<div class="col-md-4">
 						<div class="card">
-							<div class="thumbnail">           
+							<div class="thumbnail">
 								<img alt="Opt wizard thumbnail" src="images/youtubeplayer.png" />
 								<a href="http://solar-dialect-810.appspot.com/">
 									<div class="thumb-cover"></div>
@@ -385,7 +386,7 @@
 										<h4 class="icon-javascript"></h4>
 									</div>
 									<div class="clearfix"></div>
-								</div> 
+								</div>
 							</div>
 							<div class="card-info">
 								<div class="moving">
