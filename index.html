@@ -1,0 +1,47 @@
+<html>
+	<head>
+
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+
+	    <title>me Twitter m8!</title>
+
+		<style>
+			body {
+				margin: 0;
+			}
+			.vertical-center {
+				min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+				min-height: 100vh; /* These two lines are counted as one :-)       */
+
+				display: flex;
+				align-items: center;
+			}
+		</style>
+		<link href="dist/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="shortcut icon" href="http://faviconist.com/icons/91360b85db77fa4e05ca8d0d2d991352/favicon.ico" />
+	
+		<script src="js/jquery-2.0.0.min.js"></script>
+		<script type="text/javascript" src="dist/js/bootstrap.min.js"></script>
+		<script src="js/main.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation" style="background: transparent; border: 0px solid transparent;">
+			<div class="container" style="text-align: center;">
+				<h1>Enjoy this first</h1>
+				<nav>
+					<ul class="pager">
+						<li><a style="color: black; background: transparent;" href="main.html">Continue to site</a></li>
+						<li><a id="another" style="color: black; background: transparent;" onclick="return showNextGif()" href="#">Or watch another gif</a></li>
+					</ul>
+				</nav>
+			</div>
+		</nav>
+		<div class="container vertical-center" style="padding: 0; text-align: center;">
+			<img src="gifs/simpletrick.gif" alt="a simple trick" style="width: 100%;"/>
+		</div>
+	</body>
+</html>
