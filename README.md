@@ -13,3 +13,4 @@ $ source setup.sh
 - https://bootswatch.com/ - United bootstrap theme
 - http://scipython.com/blog/ - Design inspiration
 - http://hilite.me/ - Displaying code
+- https://github.com/Khan/KaTeX - Nice looking math stuff

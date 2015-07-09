@@ -12,6 +12,20 @@
 	</ul>
 </p>
 
+<p>
+	These are just notes I put on this website so that I will be able to remeber the content and be able to review it easly for later exams.
+</p>
 
+<h1>Fourier Transform</h1>
+<div class="well text-center">
+	<h3 class="ft-eq"></h3>
+	<p>The Fourier Transform of f(t)</p>
+</div>
 
+{% endblock %}
+
+{% block extra_scripts %}
+<script type="text/javascript">
+	katex.render("F\\{f(t)\\} = F(\\omega) = \\int_{-\\infty}^{\\infty} f(t)e^{j\\omega t}dt", $(".ft-eq")[0]);
+</script>
 {% endblock %}
