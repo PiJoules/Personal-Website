@@ -17,15 +17,16 @@ page_count = 5
 # Essentially filters the posts based on the search query
 def search_posts(query):
 	matches = []
+	query = query.lower()
 	for post in posts:
 		if "file" in post:
-			content = render_template("posts/" + post["file"], post=post)
+			content = render_template("posts/" + post["file"], post=post).lower()
 			count = content.count(query)
 			if count > 0:
 				matches.append( (post, count) )
 		elif "links" in post:
 			try:
-				content = urllib2.urlopen(post["links"][0][0]).read().decode("utf8")
+				content = urllib2.urlopen(post["links"][0][0]).read().decode("utf8").lower()
 				count = content.count(query)
 				if count > 0:
 					matches.append( (post, count) )
